@@ -20,17 +20,14 @@ $(document).ready(function () {
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-
     map = new google.maps.Map(document.getElementById("map"), options);
   }
 
   initialize();
 
+    function placesImages() {
 
-
-  function carregarPontos() {
-
-    $.each(restaurantes, function (index, restaurante) {
+    $.each(restaurantes, function (i, restaurante) {
 
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(restaurante.latitude, restaurante.longitude),
@@ -39,10 +36,13 @@ $(document).ready(function () {
 
       });
 
+      $("<img>").attr("src", restaurante.image).addClass(restaurante.name).appendTo("#images");
+
+
     });
 
 
   }
 
-  carregarPontos();
+  placesImages();
 });

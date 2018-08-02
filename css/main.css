@@ -31,5 +31,9 @@ div.row.no-gutters {
   height: 40vh;
 }
 
-
+img{
+  width:100px;
+  height:100px;
+  padding: 2px;
+}
 

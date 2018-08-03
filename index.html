@@ -16,33 +16,51 @@
         <h1 class="logo">FOODMAP</h1>
       </section>
       <div class="col-12 text-center">
-        <div class="border border-light p-3">
+        <div class="border border-dark p-3">
           <div id="map"></div>
         </div>
       </div>
-      <div class="input-group col-12 text-center">
-        <input type="text" id="restaurante" class="form-control input-md" placeholder="Buscar" />
-        <span class="input-group-btn">
-            <input class="btn btn-danger btn-info btn-md" type="button">
-                <i class="icon-search"></i>
-            </button>
-        </span>
-      </div>
-      <div class='form-wrapper  col-12 text-center'>
-        <form action="#" method="post">
-           <input type="text" name="pesquisa" placeholder="O que você procura?"/>
-           <input type="submit" value="Pesquisar"/>
-        </form>
-    </div>
-
-
-      <div class="col-12 text-center">
-        <div class="border border-light p-3">
-          <div id="images"></div>
+      <div class="input-group col-10 offset-1">
+        <input type="text" class="form-control" placeholder="O que você deseja comer hoje?" aria-label="O que você deseja comer hoje?" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="icon-search"></i></button>
         </div>
       </div>
 
+      <div class="col-12 text-center">
+        <div class="border border-dark p-3">
+          <div id="images"></div>
+        </div>
+      </div>
     </div>
+
+    <div id="foodModal" class="w3-modal" onclick="this.style.display='none'">
+      <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+      <div class="w3-modal-content w3-animate-zoom">
+        <img id="img01" style="width:100%">
+      </div>
+    </div>
+
+    <div class="modal fade" id="foodModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <img id="img01" style="width:100%">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
 
 
 

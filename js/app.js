@@ -45,4 +45,9 @@ $(document).ready(function () {
   }
 
   placesImages();
+
+
+  $("#restaurante").on("click", function(){
+     alert($(this).val());
+});
 });

@@ -26,7 +26,7 @@ $(document).ready(function () {
 
       });
 
-      $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).addClass(restaurante.type).appendTo("#images");
+      $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).addClass(restaurante.type).attr("href", "#foodModal").attr('rel', 'modal:open').appendTo("#images");
 
     });
 
@@ -41,15 +41,11 @@ $(document).ready(function () {
   });
 
   $("img").click(function () {
-    var xuxu = $(this).attr("src");
-    $("#img01").attr("src", xuxu);
+    var picture = $(this).attr("src");
+    $("#img01").attr("src", picture);
   });
 });
 
-function onClick(element) {
-
-  document.getElementById("foodModal").style.display = "block";
-}
 
 
 

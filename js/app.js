@@ -19,7 +19,7 @@ $(document).ready(function () {
       map: map,
     });
       $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).addClass(restaurante.type).appendTo("#images");
-    });
+     });
   }
   placesImages();
   
@@ -30,18 +30,18 @@ $(document).ready(function () {
     $("h4").html(name);
     $('.modal-content').load('content.html', function () {
       $('#myModal').modal({ show: true });
-          
     });
-    
-
   });
 
+  
 
+  $("button").on('click', function () {
+    var foodOption = $("#food-option").val();
+    alert(foodOption);
+  });
  });
 
 
-
- 
 
 
 

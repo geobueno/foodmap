@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   var map;
   function initialize() {
     var latlng = new google.maps.LatLng(-23.5576364, -46.6644888);
@@ -9,43 +10,55 @@ $(document).ready(function () {
     };
     map = new google.maps.Map(document.getElementById("map"), options);
   }
-  initialize();
+  initialize(); 
 
-  function placesImages() {
+  function places() {
     $.each(restaurantes, function (i, restaurante) {
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(restaurante.latitude, restaurante.longitude),
-      title: "Meu ponto personalizado! :-D",
-      map: map,
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(restaurante.latitude, restaurante.longitude),
+        title: "Meu ponto personalizado! :-D",
+        map: map,
+      });
     });
-      $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).addClass(restaurante.type).appendTo("#images");
-     });
+    }
+  places();
+  
+  
+  function pictures(search) {
+    $('#images').html('');
+    $.each(restaurantes, function (i, restaurante) {
+      if (search === '') {
+        $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).attr("description", restaurante.description).addClass(restaurante.type).appendTo("#images");
+      }
+      else if (search === restaurante.type) {
+        $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).attr("description", restaurante.description).addClass(restaurante.type).appendTo("#images");
+        
+      }
+
+      $('img').click(function () {
+        $(".img01").attr("src", $(this).attr("src"));
+        $("h4").html($(this).attr("id"));
+        $("h6").html($(this).attr("description"));
+        $('#myModal').load('content.html', function () {
+          $('#myModal').modal({ show: true });
+        });
+      });
+  });
+
   }
-  placesImages();
+  pictures('');
   
-  $('img').on('click', function () {
-    var picture = $(this).attr("src");
-    var name = $(this).attr("id");
-    $("#img01").attr("src", picture);
-    $("h4").html(name);
-    $('.modal-content').load('content.html', function () {
-      $('#myModal').modal({ show: true });
-    });
-  });
-
-  
-
-  $("button").on('click', function () {
+  $("button").click( function () {
     var foodOption = $("#food-option").val();
-    alert(foodOption);
-  });
- });
+    $("input").val('');
+    if (foodOption === 'vegana' || foodOption === 'fast food' || foodOption === 'italiana' || foodOption === 'japonesa' || foodOption === 'arabe') {
+      pictures(foodOption);
+    }
+    else {
+      pictures('');
+    }
+  });   
 
 
-
-
-
-
-
-
-
+  
+});

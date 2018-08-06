@@ -11,8 +11,7 @@
   <title>FoodMap</title>
 </head>
 
-  <body>
-
+<body>
   <div class="row no-gutters">
     <section class="open bg-danger col-12 w-100 text-center">
       <h1 class="logo">FOODMAP</h1>
@@ -21,7 +20,6 @@
       <div class="border border-dark p-3">
         <div id="map"></div>
       </div>
-
     </div>
     <div class="input-group col-10 offset-1">
       <input type="text" class="form-control" placeholder="O que você deseja come hoje?" aria-label="O que você deseja comer hoje?" aria-describedby="button-addon2" id="food-option" name="food-option">
@@ -29,25 +27,26 @@
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="icon-search"></i></button>
       </div>
     </div>
-
     <div class="col-12 text-center">
       <div class="border border-dark p-3">
         <div id="images"></div>
       </div>
     </div>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-
-            <h4 class="modal-title" id="modal-title"></h4>
+            <div class="titles col-10 offset-1">
+              <h4 class="modal-title" id="modal-title"></h4>
+              <h6 class="modal-subtitle" id="modal-subtitle"></h6>
+            </div>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
-            <img id="img01"/> 
+            <img class="img01" />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Pedir Agora!</button>
@@ -56,12 +55,12 @@
       </div>
     </div>
   </div>
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBEplmqm2h4k1_WBgExo4qqo30kt7gjYDA&amp;sensor=false"></script>
-  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAYkYrEgGLyRvNsHzFh7DYrdjijsuWMTio&amp;sensor=false"></script>
 </body>
 </html>

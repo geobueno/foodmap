@@ -23,7 +23,6 @@ $(document).ready(function () {
     }
   places();
   
-  
   function pictures(search) {
     $('#images').html('');
     $.each(restaurantes, function (i, restaurante) {
@@ -32,23 +31,12 @@ $(document).ready(function () {
       }
       else if (search === restaurante.type) {
         $("<img>").attr("src", restaurante.image).attr('id', restaurante.name).attr("description", restaurante.description).addClass(restaurante.type).appendTo("#images");
-        
       }
-
-      $('img').click(function () {
-        $(".img01").attr("src", $(this).attr("src"));
-        $("h4").html($(this).attr("id"));
-        $("h6").html($(this).attr("description"));
-        $('#myModal').load('content.html', function () {
-          $('#myModal').modal({ show: true });
-        });
-      });
-  });
-
+    });
   }
   pictures('');
   
-  $("button").click( function () {
+  $(document).on("click", 'button', function () {
     var foodOption = $("#food-option").val();
     $("input").val('');
     if (foodOption === 'vegana' || foodOption === 'fast food' || foodOption === 'italiana' || foodOption === 'japonesa' || foodOption === 'arabe') {
@@ -57,8 +45,14 @@ $(document).ready(function () {
     else {
       pictures('');
     }
-  });   
+   });  
 
-
-  
+  $(document).on("click", 'img', function () {
+    $(".img01").attr("src", $(this).attr("src"));
+    $("h4").html($(this).attr("id"));
+    $("h6").html($(this).attr("description"));
+    $('#myModal').load('content.html', function () {
+      $('#myModal').modal({ show: true });
+    });
+  });
 });

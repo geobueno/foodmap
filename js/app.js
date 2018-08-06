@@ -1,5 +1,11 @@
-$(document).ready(function () {
+function splash() {
+  $('#app').delay('2000').fadeIn('slow');
+  $('#app').fadeIn('slow');
+}
 
+
+$(document).ready(function () {
+  splash()
   var map;
   function initialize() {
     var latlng = new google.maps.LatLng(-23.5576364, -46.6644888);
@@ -10,7 +16,7 @@ $(document).ready(function () {
     };
     map = new google.maps.Map(document.getElementById("map"), options);
   }
-  initialize(); 
+  initialize();
 
   function places() {
     $.each(restaurantes, function (i, restaurante) {
@@ -20,9 +26,11 @@ $(document).ready(function () {
         map: map,
       });
     });
-    }
+  }
   places();
-  
+
+ 
+
   function pictures(search) {
     $('#images').html('');
     $.each(restaurantes, function (i, restaurante) {
@@ -35,7 +43,7 @@ $(document).ready(function () {
     });
   }
   pictures('');
-  
+
   $(document).on("click", 'button', function () {
     var foodOption = $("#food-option").val();
     $("input").val('');
@@ -45,7 +53,7 @@ $(document).ready(function () {
     else {
       pictures('');
     }
-   });  
+  });
 
   $(document).on("click", 'img', function () {
     $(".img01").attr("src", $(this).attr("src"));
@@ -55,4 +63,6 @@ $(document).ready(function () {
       $('#myModal').modal({ show: true });
     });
   });
+
+
 });

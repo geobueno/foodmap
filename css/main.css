@@ -4,15 +4,33 @@
   box-sizing: border-box;
 }
 
-  *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+ *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body{
-  height:100%;
-  width: 100%;
+body {
+  margin: 0;
+}
+
+.splash, .content {
+  position: absolute;
+  min-height: 100vh;
+  background-color: #FF7A00;
+}
+
+.splash {
+  display: none;
+}
+
+.content {
+  display: none;
+}
+
+.title {
+  font: bold 44px arial, verdana;
+  color: #4E2600;
 }
 
 div.row.no-gutters {
@@ -28,7 +46,7 @@ div.row.no-gutters {
 
 #map {
   width: 100%;
-  height: 50vh;
+  height: 40vh;
 }
 
 img{
@@ -45,4 +63,8 @@ img{
 .img01 {
   width: 100%;
   height:100%;
+}
+
+#food-option{
+  width: 300px;
 }
